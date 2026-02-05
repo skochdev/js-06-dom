@@ -17,10 +17,6 @@ function onCreateClick() {
 }
 
 function createBoxes(amount) {
-    if (refs.input.value === '' || refs.input.value > 100 || refs.input.value < 0) {
-        return
-    }
-    
     destroyBoxes()
     let startDimensions = 30
 
@@ -41,6 +37,7 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
     refs.boxes.replaceChildren()
+    refs.input.value = ''
 }
 
 refs.createBtn.addEventListener('click', onCreateClick)
